@@ -13,3 +13,4 @@ conda deactivate
 conda env remove -n "environment_name"
 conda env remove -p "Path_of_environment"
 ```
+
