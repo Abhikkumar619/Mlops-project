@@ -63,5 +63,3 @@ class MongoDBClient:
             log.info("Mongodb connecting sucessfully.")
         except Exception as e: 
             raise e
-        
-obj1=MongoClient()
