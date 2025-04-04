@@ -1,4 +1,5 @@
 import os
+from datetime import date
 # For mongoDB connection
 DB_NAME="Mlops_pro"
 collection_name="vehicle"
@@ -24,7 +25,18 @@ DATA_INGESTION_INGESTED_DIR: str = "ingested"
 DATA_INGESTION_TRAIN_TEST_SPLIT_RATIO: float = 0.25
 
 
+TARGET_COLUMN = "Response"
+CURRENT_YEAR = date.today().year
 
 # Data Validation related constant. 
 DATA_VALIDATION_DIR_NAME:str='data_validation'
 VALIDATION_REPORT_FILE_PATH: str='report.yaml'
+
+
+# Data Transformation ralated constant start with DATA_TRANSFORMATION VAR NAME
+DATA_TRANSFORMATION_DIR_NAME: str = "data_transformation"
+DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR: str = "transformed"
+DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR: str = "transformed_object"
+
+
+PREPROCSSING_OBJECT_FILE_NAME = "preprocessing.pkl"
