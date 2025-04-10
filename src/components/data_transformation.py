@@ -24,14 +24,14 @@ class DataTransformation:
             self.data_validation_artifact = data_validation_artifact
             self._schema_config = read_yaml_file(file_path=SCHEMA_FILE_PATH)
         except Exception as e:
-            raise MyException(e, sys)
+            raise e
 
     @staticmethod
     def read_data(file_path) -> pd.DataFrame:
         try:
             return pd.read_csv(file_path)
         except Exception as e:
-            raise MyException(e, sys)
+            raise e
 
     def get_data_transformer_object(self) -> Pipeline:
         """
@@ -69,7 +69,7 @@ class DataTransformation:
 
         except Exception as e:
             logging.exception("Exception occurred in get_data_transformer_object method of DataTransformation class")
-            raise MyException(e, sys) from e
+            raise e
 
     def _map_gender_column(self, df):
         """Map Gender column to 0 for Female and 1 for Male."""
@@ -173,4 +173,4 @@ class DataTransformation:
             )
 
         except Exception as e:
-            raise MyException(e, sys) from e
+            raise e
